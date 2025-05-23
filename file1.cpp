@@ -48,7 +48,7 @@ public:
 
         Node *temp = top; // Create a temporary pointer to the top node
         top = top->next;  // Update the top pointer to the next node
-        cout << "Popped value: " << top->data << endl;
+        cout << "Popped value: " << temp->data << endl;
         delete temp;
     }
     void peek()
@@ -96,12 +96,17 @@ int main()
     case 1:
         cout << "Enter the value to push: ";
         cin >> value;
-        stack.push(value); //Push the entered value onto the stack
+        stack.push(value); // Push the entered value onto the stack
         break;
     case 2:
-    if (!stack.isEmpty())
-    {
-        stack.pop(); // Pop the top element from the stack
-    }
+        if (!stack.isEmpty())
+        {
+            stack.pop(); // Pop the top element from the stack
+        }
+        else
+        {
+            cout << "Stack is empty. cannot pop." << endl;
+        }
+        break;
     }
 }
